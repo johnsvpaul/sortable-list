@@ -7,9 +7,8 @@ import Sortable from 'sortablejs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit, AfterViewChecked {
-  mainList = ['Item 1', 'Item 2', 'Item 5'];
+  mainList = ['Item 1'];
   groups: any[] = [
-    { title: 'Group 1', items: ['Item 3', 'Item 4'] },
   ];
 
   @ViewChild('mainContainer') mainContainerRef!: ElementRef;

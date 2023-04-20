@@ -35,7 +35,7 @@ body {
   margin-bottom: 6px;
 }
 .item {
-  background-color: #a3b1ff;
+  background-color: #AA77FF;
 }
 
 .item:last-child,
@@ -44,17 +44,27 @@ body {
 }
 
 .group {
-  background-color: #b1ff9e;
+  background-color: #97DEFF;
+  .item{
+    background-color: #97DEFF;
+  }
 }
 
 .group-container {
   margin-top: 5px;
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
+  //background-color: #ffffff;
+  //border: 1px solid #000000;
+  .group{
+    background-color: #ffd7c9;
+    .group{
+        background-color: #ffc9f1;
+
+    }
+  }
 }
 
 .group-container .item {
-  background-color: #ff9090;
+  background-color: #C9EEFF;
   border-bottom: 1px solid #e0e0e0;
 }
 
