@@ -18,7 +18,8 @@ body {
 }
 
 .main-container,
-.group-container {
+.group-item,
+.is-object {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -35,7 +36,7 @@ body {
   margin-bottom: 6px;
 }
 .item {
-  background-color: #AA77FF;
+  background-color: #aa77ff;
 }
 
 .item:last-child,
@@ -44,27 +45,30 @@ body {
 }
 
 .group {
-  background-color: #97DEFF;
-  .item{
-    background-color: #97DEFF;
+  background-color: #97deff;
+  .item {
+    background-color: #97deff;
   }
 }
 
-.group-container {
+.group-item {
   margin-top: 5px;
   //background-color: #ffffff;
   //border: 1px solid #000000;
-  .group{
+  .group {
     background-color: #ffd7c9;
-    .group{
-        background-color: #ffc9f1;
-
+    .group {
+      background-color: #ffc9f1;
     }
   }
 }
 
-.group-container .item {
-  background-color: #C9EEFF;
+.is-table {
+  padding: 0;
+}
+.group-item .item,
+.is-table .item {
+  background-color: #c9eeff;
   border-bottom: 1px solid #e0e0e0;
 }
 

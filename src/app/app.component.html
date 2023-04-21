@@ -1,13 +1,34 @@
 <div id="sidebar">
   <button (click)="addItem()">Add Item</button>
   <button (click)="addGroup()">Add Group</button>
-  <ul class="main-container" #mainContainer>
-    <li class="item" *ngFor="let item of mainList">{{ item }}</li>
-    <ng-container *ngFor="let group of groups">
-      <li class="group">
-        <div class="item">{{ group.title }}</div>
-        <ul class="group-container" #groupContainer>
-          <li class="item" *ngFor="let item of group.items">{{ item }}</li>
+
+  <ul class="main-container" *ngIf="!isAdding">
+    <ng-container *ngFor="let item of inputs">
+      <li
+        class="item"
+        [class.is-group-list]="item.type === 2"
+        [class.is-table-list]="item.type === 4"
+      >
+       <!-- UI for list item -->
+        {{ item.definition.title }}
+
+        <!-- show group/table header and buttons -->
+        
+        {{ item.type ? "(" + (item.type === 4 ? "Table" : "Group") + ")" : "" }}
+
+
+        <!--  UI for group or table items -->
+        <ul
+          *ngIf="item.type === 2 || item.type === 4"
+          [class.group-item]="item.type === 2"
+          [class.is-table]="item.type === 4"
+        >
+          <ng-container *ngFor="let group of item.children">
+            <!--  UI for nested item -->
+            <li class="item" [class.table-item]="item.type === 4">
+              {{ group.title }}
+            </li>
+          </ng-container>
         </ul>
       </li>
     </ng-container>
